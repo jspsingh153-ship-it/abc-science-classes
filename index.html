@@ -242,24 +242,11 @@
 </div>
 
 <script>
-    // =========================================================================
-    // STEP 1: Paste Your Google Gemini API Key Below
-    // =========================================================================
-     // 1. पुरानी API Key वाली लाइन को हटाकर यह डालें (Base64 Encoded Key)
-const ENCODED_KEY = "QWI4Uk42S1Z2bExlRUxpQlN6bDlYNjRKejlrMmFIbW9LYlZBV0NmWXVPMTRMRmVmelE="; 
+const GEMINI_API_KEY = "AQ.Ab8RN6Lu6RHIwi6mJpqHfom_txe...";
 
-// 2. Key को सुरक्षित डिकोड करने का फंक्शन
-function getApiKey() {
-    try {
-        return atob(ENCODED_KEY);
-    } catch (e) {
-        return "";
-    }
+function getApiUrl() {
+    return `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 }
-
-// 3. GEMINI_API_KEY को इस तरह सेट करें
-const GEMINI_API_KEY = getApiKey();; 
-
     // Syllabus Database Structure
     const syllabusData = {
         "6": {
@@ -447,7 +434,7 @@ const GEMINI_API_KEY = getApiKey();;
         document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
         document.querySelectorAll('.explanation').forEach(exp => exp.style.display = 'block');
     }
-</script>
+</scrip>
 
 </body>
 </html>
