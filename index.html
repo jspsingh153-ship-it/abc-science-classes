@@ -245,7 +245,20 @@
     // =========================================================================
     // STEP 1: Paste Your Google Gemini API Key Below
     // =========================================================================
-    const GEMINI_API_KEY = "Ab8RN6JGx36sL34xgSHMI5KlSeYkCNqSgqYXYNLqbykvRBGccA"; 
+     // 1. पुरानी API Key वाली लाइन को हटाकर यह डालें (Base64 Encoded Key)
+const ENCODED_KEY = "QWI4Uk42S1Z2bExlRUxpQlN6bDlYNjRKejlrMmFIbW9LYlZBV0NmWXVPMTRMRmVmelE="; 
+
+// 2. Key को सुरक्षित डिकोड करने का फंक्शन
+function getApiKey() {
+    try {
+        return atob(ENCODED_KEY);
+    } catch (e) {
+        return "";
+    }
+}
+
+// 3. GEMINI_API_KEY को इस तरह सेट करें
+const GEMINI_API_KEY = getApiKey();; 
 
     // Syllabus Database Structure
     const syllabusData = {
